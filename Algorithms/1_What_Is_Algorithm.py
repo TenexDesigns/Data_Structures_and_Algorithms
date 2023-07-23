@@ -282,10 +282,14 @@ Through out , we will be determing the various time compleityes of the algortms 
 
 
 SPACE COMPLEXITY
+ Most algortms will have this spac complexityes, _Triy to avoid quadratic space complexityes
 
-o(1) - Constant space complexity - If the meory size foe the algoritm does not shift based on the input size, then the algorithm has a constant space complexity e.g sorthing algortim sthat a
+o(1) - Constant space complexity - If the meory size foe the algoritm does not shift based on the input size, then the algorithm has a constant space complexity
+e.g sorthing algortim that sorth within the array without using additioanl arrays
 
+O(n) Linear space complexity - The Space need growa as the size of the input grows
 
+O(logn) - Lorgarithimc - Space grows but not at the same rate as the input sie
 
 
 
