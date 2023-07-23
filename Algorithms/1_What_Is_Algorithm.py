@@ -296,13 +296,34 @@ O(logn) - Lorgarithimc - Space grows but not at the same rate as the input sie
 
 
 
+OBJECTA AND ARRAYS BIO-O in javascrtip
+
+An object is a collection of key value pairs 
+
+To insert and remove objects in  java script is constant Bio _O nottion
+
+Insert -O(1)
+Remove - O(1)
+Access - o(1) - Time complexity is consant
+
+Search - O(n) - Tme complexity is lenaer
+Object.keys() - O(n)
+Object.values() - O(n)
+Object.entries() - O(n)
 
 
 
 
+Array Big-O in javascript
+An array is an orderd collection of values
 
-
-
+Insert /remove at the end - O(1) Constant complexity
+Insert/remove at the beginig - O(n) _Linera comlexity
+Access -O(1) -Constant
+Seactch -O(n) - Linear complexity
+Push/pop - O(1)
+shift /unshif/concat/slice/spluce - O(n)
+forEach/Map?filter / reduce - O(n)
 
 
 
