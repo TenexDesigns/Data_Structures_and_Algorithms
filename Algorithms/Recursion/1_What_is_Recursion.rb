@@ -41,6 +41,8 @@ Tree-based problems: Tree traversal (pre-order, in-order, post-order), tree sear
 Graph-based problems: Depth-First Search (DFS), pathfinding, etc.
 Divide and conquer: Merge sort, quicksort, etc.
 Combinatorial problems: Generating permutations, combinations, etc.
+
+  
 Example of a problem solved using recursion:
 
 Problem Task: Compute the factorial of a non-negative integer n.
@@ -61,6 +63,48 @@ Recursion can make code concise and expressive for problems with recursive prope
 
 
 
+  
+Recusion More explanantion
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+  Recursion is a process in which a function calls itself as a subroutine. This allows the function to be repeated several times, as it can call itself during its execution.
+
+Recursion is useful for tasks that can be defined in terms of similar subtasks. For example, the mathematical operation 'factorial' is suited to recursive implementation. Other examples include traversing tree-like data structures, sorting algorithms (like quicksort and mergesort), and implementing the Fibonacci sequence (programiz.com, freecodecamp.org, geeksforgeeks.org, javascripttutorial.net).
+
+Heres an example of a recursive function in JavaScript that calculates the factorial of a number:
+
+function factorial(n) {
+    // Base case
+    if (n === 0) {
+        return 1;
+    }
+    // Recursive case
+    else {
+        return n * factorial(n - 1);
+    }
+}
+console.log(factorial(5)); // Output: 120
+In this example, factorial(n - 1) is the recursive call. The base case is n === 0, at which point the function returns 1 and stops calling itself.
+
+Another example of recursion is a function to calculate the nth number in the Fibonacci sequence:
+
+function fibonacci(n) {
+    // Base cases
+    if (n === 0) {
+        return 0;
+    } else if (n === 1) {
+        return 1;
+    }
+    // Recursive case
+    else {
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+}
+console.log(fibonacci(10)); // Output: 55
+In this example, fibonacci(n - 1) + fibonacci(n - 2) is the recursive call. The base cases are n === 0, at which point the function returns 0, and n === 1, at which point the function returns 1.
+
+Note: Recursive functions must have a condition to stop calling itself. Otherwise, the function is called indefinitely, leading to a stack overflow error. This condition is often called the base case. For recursion to be useful, the size of the input should decrease with each recursive call, such that the input will eventually reach the base case (programiz.com, javascripttutorial.net).
 
 
 
