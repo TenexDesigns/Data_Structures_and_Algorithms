@@ -83,6 +83,86 @@ In the example above, we implemented a hash table with methods for putting (inse
 
 
 
+
+  
+
+MORE EXPLANANTION
+******************************************************************************************************************************************
+
+
+  
+  A hash table, also known as a hash map, is a data structure that implements an associative array abstract data type, a structure that can map keys to values. A hash table uses a hash function to compute an index into an array of buckets or slots, from which the desired value can be found codecademy.com.
+
+Ideal hash tables have an average constant time complexity for search, insert, and delete operations. This is achieved by using a good hash function that assigns each key to a unique bucket, but in most cases, it is not possible to perfectly hash all possible keys freecodecamp.org.
+
+Here is an example of a simple hash table implementation in JavaScript:
+
+class HashTable {
+    constructor() {
+        this.table = new Array(127);
+        this.size = 0;
+    }
+
+    _hash(key) {
+        let hash = 0;
+        for (let i = 0; i < key.length; i++) {
+            hash += key.charCodeAt(i);
+        }
+        return hash % this.table.length;
+    }
+
+    set(key, value) {
+        const index = this._hash(key);
+        if (this.table[index]) {
+            for (let i = 0; i < this.table[index].length; i++) {
+                if (this.table[index][i][0] === key) {
+                    this.table[index][i][1] = value;
+                    return;
+                }
+            }
+            this.table[index].push([key, value]);
+        } else {
+            this.table[index] = [];
+            this.table[index].push([key, value]);
+        }
+        this.size++;
+    }
+
+    get(key) {
+        const index = this._hash(key);
+        if (this.table[index]) {
+            for (let i = 0; i < this.table[index].length; i++) {
+                if (this.table[index][i][0] === key) {
+                    return this.table[index][i][1];
+                }
+            }
+        }
+        return null;
+    }
+
+    remove(key) {
+        const index = this._hash(key);
+        if (this.table[index] && this.table[index].length) {
+            for (let i = 0; i < this.table[index].length; i++) {
+                if (this.table[index][i][0] === key) {
+                    this.table[index].splice(i, 1);
+                    this.size--;
+                    return true;
+                }
+            }
+        } else {
+            return false;
+        }
+    }
+}
+In this example, _hash is a private method used to compute a hash value for a given key, which is then used to determine the index in the array where to store the key-value pair. The set method is used to add a new key-value pair to the hash table. If the key already exists in the hash table, its value is updated. The get method is used to retrieve a key-value pair from the hash table. If the key does not exist in the hash table, null is returned. The remove method is used to remove a key-value pair from the hash table. If the key does not exist in the hash table, false is returned freecodecamp.org.
+
+The hash table data structure is used in many different scenarios in computer science. For example, it is used to implement caches, databases, and sets in JavaScript. Also, many algorithms, such as those used for detecting repeated elements or finding pairs with a given sum, benefit from the constant time complexity of hash table operations section.io.
+
+
+
+
+
 MORE EXPLANANTION
 ******************************************************************************************************************************************
 
@@ -122,7 +202,7 @@ Separate Chaining: This technique involves creating a linked list of key-value p
             this.size++;
         }
     }
-    ```
+
 Linear Probing: This technique involves finding the next available slot in the hash table when a collision occurs. This is done by incrementing the index by 1 until an empty slot is found baeldung.com.
 Heres a Javascript example of how this can be implemented:
     class HashTable {
