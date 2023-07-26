@@ -107,6 +107,68 @@ The reason to use a stack instead of an array directly is that a stack provides 
 
 
 
+MORE EXPLANANTION
+***************************************************************************************************************************************************
+
+
+        A stack is a linear data structure that follows the Last In First Out (LIFO) principle. It means that the last element added to the stack will be the first one to be removed. Stacks are used in various computer algorithms and applications, such as function calls, expression evaluation, and undo/redo functionality.
+
+In JavaScript, you can implement a stack using an array or by creating a custom Stack class. Below is an implementation of a stack in JavaScript with the specified methods:
+
+javascript
+Copy code
+class Stack {
+  constructor() {
+    this.items = [];
+  }
+
+  push(element) {
+    this.items.push(element);
+  }
+
+  pop() {
+    if (this.isEmpty()) {
+      return "Stack is empty";
+    }
+    return this.items.pop();
+  }
+
+  peek() {
+    if (this.isEmpty()) {
+      return "Stack is empty";
+    }
+    return this.items[this.items.length - 1];
+  }
+
+  isEmpty() {
+    return this.items.length === 0;
+  }
+
+  size() {
+    return this.items.length;
+  }
+
+  print() {
+    console.log(this.items);
+  }
+}
+
+// Example usage:
+const myStack = new Stack();
+myStack.push(1);
+myStack.push(2);
+myStack.push(3);
+
+myStack.print(); // Output: [1, 2, 3]
+console.log(myStack.peek()); // Output: 3
+console.log(myStack.pop()); // Output: 3
+console.log(myStack.size()); // Output: 2
+console.log(myStack.isEmpty()); // Output: false
+      
+In the example above, we created a custom Stack class with the required methods: push, pop, peek, isEmpty, size, and print. The push method adds an element to the top of the stack (end of the array), the pop method removes the top element, the peek method returns the value of the top element without removing it, the isEmpty method checks if the stack is empty, the size method returns the number of elements in the stack, and the print method visualizes the elements in the stack.
+
+While arrays can be used to implement a stack, creating a custom Stack class provides more control and encapsulation over the stack operations. It also allows you to add additional functionality or validation specific to the stack, making the code cleaner and easier to maintain. Using a stack is beneficial when you need to perform operations in a Last In First Out (LIFO) manner and want to ensure that only specific methods are used for stack manipulation.
+
 
 
 
