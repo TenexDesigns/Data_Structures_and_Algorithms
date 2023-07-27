@@ -138,7 +138,12 @@ ALGORITHMS TO watch our for
 
 
 
-
+TOP 5 MATH SKILLS
+       1. Combinations
+       2.Lorgarithm
+       3.Factorial
+       4.Exponentials
+       5.Modulus
 
 
 
