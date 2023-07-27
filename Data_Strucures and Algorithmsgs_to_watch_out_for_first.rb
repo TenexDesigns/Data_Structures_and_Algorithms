@@ -85,8 +85,43 @@ Top 5 datastrucres to lears
 
 
 
-ALGORITHMS TO LERAN
+ALGORITHMS TO watch our for
 
+
+   1. Top K elemnts algorithms- We use Heap Data struuere here
+      e.g K largest or smallest elements in an arrray
+          Top K frequent elememnts  
+           In Sliding window problems
+   
+
+2. Sliding window algorithm
+
+       e.g Longest substring without repeating charqacters
+           Maximum sum of distincit sub arrays with length K
+          Finding longest substring with K unique characters in a given string
+
+
+
+3. Back tracking - Usialy implementted using recursion
+                e.g Combination sum 
+                     Soduku solver
+                     Permutations
+                     word ladder
+
+
+
+4. Dynamic proraming
+   - Break the problem into smaller problems e.g combination sum
+   
+
+
+5. Deap first search(uses stack, LIFO) and Breath firest search(Uses queue,FIFO)
+    - Used for graph transversal
+
+
+
+
+   
 6.Sliding window
 7.Binary serach
 8. Depth fiest serach and Breadth first search
