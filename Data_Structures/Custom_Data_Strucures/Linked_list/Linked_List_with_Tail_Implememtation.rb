@@ -114,6 +114,47 @@ class LinkedListWithTail {
         }
     }
 
+
+    deleteFirst() {
+        if (this.isEmpty()) {
+            return console.log("List is empty, nothing to delete.");
+        }
+
+        if (this.head === this.tail) {
+            this.head = null;
+            this.tail = null;
+        } else {
+            this.head = this.head.next;
+        }
+
+        this.size--;
+    }
+
+
+
+
+            
+    deleteLast() {
+        if (this.isEmpty()) {
+            return console.log("List is empty, nothing to delete.");
+        }
+
+        if (this.head === this.tail) {
+            this.head = null;
+            this.tail = null;
+        } else {
+            let prev = this.head;
+            while (prev.next !== this.tail) {
+                prev = prev.next;
+            }
+            prev.next = null;
+            this.tail = prev;
+        }
+
+        this.size--;
+    }
+
+
     removeFrom(index) {
         let removedNode;
         if (index < 0 || index >= this.size) {
