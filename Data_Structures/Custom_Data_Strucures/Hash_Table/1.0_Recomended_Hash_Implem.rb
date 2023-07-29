@@ -151,3 +151,33 @@ By using the class syntax, we can encapsulate the hash table implementation and 
 
 
 
+
+the time complexity of the above methods
+************************************************************************************************************************************************
+
+The time complexities of the methods in the HashTable implementation are as follows:
+
+hash(key): This method calculates the hash value for the given key by iterating through each character of the key and summing up their ASCII values. The time complexity of this method is O(k), where k is the length of the key.
+
+set(key, value): The time complexity of this method is O(1) on average. When there are no collisions, and a new key-value pair is inserted into an empty bucket, it takes constant time to append the key-value pair to the bucket. However, in the worst-case scenario, when there are many collisions and the hash table needs to be resized and rehashed, the time complexity can become O(n), where n is the number of key-value pairs in the hash table.
+
+resize(): The resize method doubles the size of the hash table and rehashes all existing key-value pairs. Since it needs to rehash all elements, the time complexity of this method is O(n), where n is the number of key-value pairs in the hash table.
+
+get(key): The time complexity of this method is O(1) on average. In the best-case scenario, the key is in the first position of the bucket, and the method returns in constant time. However, in the worst-case scenario, when there are many collisions, it may need to iterate through the entire bucket to find the key, leading to a linear search with a time complexity of O(k), where k is the average size of the bucket.
+
+remove(key): The time complexity of this method is O(1) on average. Similar to the get method, the worst-case time complexity can be O(k), where k is the average size of the bucket.
+
+has(key): The time complexity of this method is O(1) on average. It calculates the index using the hash method and then performs a constant-time check to see if the bucket contains any key-value pairs.
+
+getSize(): The getSize method returns the size of the hash table, which is stored as a property and accessed directly. So, this method has a time complexity of O(1).
+
+isEmpty(): The isEmpty method checks if the size of the hash table is zero. It also has a time complexity of O(1) since it directly accesses the size property.
+
+Overall, most operations on the hash table have an average time complexity of O(1), which means they take constant time on average. However, in the worst-case scenario with many collisions, some methods can have a time complexity of O(n), where n is the number of key-value pairs in the hash table or the average size of the buckets. The resizing operation, which happens less frequently, also has a time complexity of O(n) but is amortized over multiple insertions.
+
+
+
+
+
+    
+
