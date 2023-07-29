@@ -23,7 +23,15 @@ class HashTable {
   set(key, value) {
     const index = this.hash(key);
 
-    if (!this.buckets[index]) this.buckets[index] = [];
+    if (!this.buckets[index]) {
+      this.buckets[index] = [];
+    } else {
+      for (let i = 0; i < this.buckets[index].length; i++) {
+        if (this.buckets[index][i][0] === key) {
+          throw new Error('Key already exists');
+        }
+      }
+    }
 
     this.buckets[index].push([key, value]);
     this.size++;
