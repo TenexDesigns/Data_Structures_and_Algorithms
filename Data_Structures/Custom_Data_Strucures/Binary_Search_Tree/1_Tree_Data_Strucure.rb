@@ -2,6 +2,24 @@ Trees and Binary Search Trees (BSTs) are fundamental data structures in computer
 
 Tree Data Structure:
 A tree is a hierarchical data structure that consists of nodes connected by edges. Each tree has a root node, which is the topmost node in the hierarchy, and each node can have zero or more child nodes. Nodes with no children are called leaves. Trees are commonly used to represent hierarchical relationships, such as organizational structures, file systems, and network routing.
+
+A tree is a non-linear data strucure, compared to arrys, linked lists, stacks and queues which are linear data strucures.  
+In linear data  strucures , the time required to search is proportional to the size of the data set.
+  Trees however, owing to the nonlinear nature allow quicker and easier access to data.
+  A tree will not contain any loops or cycles
+
+
+Note: ---> Never will you be aked to implement a generic treee, You will only be asked to implment a Binary Search tree.
+
+Trees find their useage in scenarious where Hierachichal represnation of data is necessary
+  - File syastems for directory strucure
+  - DOM
+  - A family tree
+  - An organisation tress
+  - Chatbots
+  - Abstract synatax trees
+    
+  
 Main terms in a tree:
 
 Node: Each element in a tree is called a node. Each node contains data and can have references to its child nodes.
@@ -10,6 +28,13 @@ Parent: A node that has child nodes is called a parent node.
 Child: Nodes that are connected to a parent node are called child nodes.
 Leaf: A node that has no children is called a leaf node.
 Edge: The connection between nodes in a tree is called an edge.
+Sibling : Nodes with the same parent are called siblings. 
+Ancestor:The parent of the parent of a node
+Path: Sequence of nodes and edges from one node to another
+Distance: Number of edges on the path  between two nodes
+Degree: Number of child nodes  a node has.
+Depth: Number of edges a node has from the root node
+Height:Number of edges from deepest node to that node
 Applications of trees:
 
 File systems: Tree structures are used to represent the hierarchical organization of files and folders in a computers file system.
