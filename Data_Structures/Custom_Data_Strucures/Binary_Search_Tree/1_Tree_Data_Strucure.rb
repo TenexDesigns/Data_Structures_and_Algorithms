@@ -47,6 +47,19 @@ Binary Search Tree (BST)
    - The value of each right node must be greater than the parent node.
    - Each node has at most two children   
     
+
+    Binary Search Tree Operations
+
+    Insertion  - To add a node to the tree
+    Search - To find a node given its values
+    DFS & BFS - To visit all nodes in the tree
+    Deletion - To remove a node gven its value.
+
+    Binary Search Tree Usage
+
+    - Searching
+    -Sorting
+    -To impmennt abstarct data types such as lookups tables and priority queueu
     
 Applications of trees:
 
