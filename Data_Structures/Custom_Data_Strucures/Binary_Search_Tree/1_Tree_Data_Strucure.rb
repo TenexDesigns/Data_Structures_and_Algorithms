@@ -35,6 +35,19 @@ Distance: Number of edges on the path  between two nodes
 Degree: Number of child nodes  a node has.
 Depth: Number of edges a node has from the root node
 Height:Number of edges from deepest node to that node
+
+
+
+Binary Tree
+   - A binary tree is a tree data strucure in which each node has at most two children.
+   - This children are refered to as left child and right child
+    
+Binary Search Tree (BST)
+   - In a Binary Search Tree, The value of each left node must be smaller than the parent node.
+   - The value of each right node must be greater than the parent node.
+   - Each node has at most two children   
+    
+    
 Applications of trees:
 
 File systems: Tree structures are used to represent the hierarchical organization of files and folders in a computers file system.
