@@ -14,7 +14,7 @@ A hierachical data strucure like tree can be traversed in different ways includi
 
 Depth First Search (DFS)
 
-The DFS algorithm starts at the root node and exposes as far as possible along each branch before backtracking
+The DFS algorithm starts at the root node and exposes as far as possible (to deepest node) along each branch before backtracking
 
 Visit the root node, visit all the nodes in the left subtree and visit all the nodes in the right subtree
 
@@ -33,6 +33,25 @@ Pre-Order
 3.Visit the right subtree
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
 
 
 
