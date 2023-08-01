@@ -100,3 +100,86 @@ The graph data structure is used to represent relationships and connections betw
 
 
 
+
+MORE EXPLANANTION
+************************************************************************************************************************************************
+
+  A Graph is a non-linear data structure which consists of nodes or vertices (V) and edges (E). Each edge connects a pair of nodes. Graphs are used in various applications in computer science, like representing networks, mapping routes, etc.
+
+In JavaScript, a graph can be implemented using an adjacency list. The adjacency list is one of the two commonly used representations of a graph, the other one being the adjacency matrix. The adjacency list representation is more space-efficient for sparse graphs (graphs with fewer edges).
+
+Heres a simple implementation of a Graph in JavaScript:
+
+class Graph {
+    constructor() {
+        this.adjacencyList = new Map();
+    }
+
+    addVertex(v) {
+        if(!this.adjacencyList.has(v)) {
+            this.adjacencyList.set(v, []);
+        }
+    }
+
+    addEdge(v, w) {
+        this.adjacencyList.get(v).push(w);
+        this.adjacencyList.get(w).push(v);
+    }
+
+    printGraph() {
+        for(let [vertex, edges] of this.adjacencyList) {
+            console.log(vertex, edges);
+        }
+    }
+}
+geeksforgeeks.org
+
+The Graph class above has the following methods:
+
+constructor(): This method initializes the Graph object with an empty adjacency list. The adjacency list is a Map where the keys are the vertices and the values are arrays of vertices that are connected to the key vertex by an edge.
+addVertex(v): This method adds a vertex to the graph. If the vertex does not already exist in the adjacency list, it is added with an empty array as its value. Time complexity: O(1).
+addEdge(v, w): This method adds an edge between two vertices v and w. It does this by pushing w to the adjacency list of v and v to the adjacency list of w. Time complexity: O(1).
+printGraph(): This method logs all the vertices and their corresponding adjacency lists to the console. Time complexity: O(V + E), where V is the number of vertices and E is the number of edges in the graph.
+Heres an example of how to use the Graph class:
+
+const graph = new Graph();
+graph.addVertex('A');
+graph.addVertex('B');
+graph.addVertex('C');
+graph.addEdge('A', 'B');
+graph.addEdge('B', 'C');
+graph.printGraph(); // logs 'A' ['B'], 'B' ['A', 'C'], 'C' ['B']
+blog.javascripttoday.com
+
+In this example, the graph has three vertices ('A', 'B', and 'C') and two edges (between 'A' and 'B' and between 'B' and 'C').
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
