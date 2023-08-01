@@ -53,12 +53,12 @@ Adjaceny List
 
 Adjacey List representation
 
-                  A ------------B
+                  B ------------  C
                   |
                   |                                   
                   |
                   |
-                  C
+                  A
 
 
 A ------> B
@@ -66,14 +66,14 @@ B ------> A,C
 C ------> B
 
 
-AdjacenyList = {
+AdjacenyList = [
   'A':['B']
-  'B':['A','C']
+  'B':['A','C']                           
   'C':['B']
-}
+]
 
 
-
+'B': ['A','C'] ---> This is a set that is used to hold the verticesl or nodes adjacebnt or connect to a particlar vertex or node  
 
 Adjacency Matrix Vs Adjacency List
 
