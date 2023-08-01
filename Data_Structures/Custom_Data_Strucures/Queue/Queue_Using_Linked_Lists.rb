@@ -50,11 +50,17 @@ queue.print(); // Output: 10 20 30
 console.log("Dequeued element:", queue.dequeue()); // Output: Dequeued element: 10
 console.log("Queue size:", queue.getSize()); // Output: 2
 queue.print(); // Output: 20 30
+
+
+  
 Advantages of using a linked list for implementing a queue:
 
 Dynamic Size: A linked list allows the queue to grow and shrink as needed, making it more flexible than a fixed-size array-based implementation.
 Easy to Implement: The linked list provides a straightforward way to implement a queue, especially with the append() and deleteFirst() operations.
 Efficient Enqueue and Dequeue: Both enqueue and dequeue operations in the linked list have constant time complexity O(1), which is efficient.
+
+
+  
 Additional Information:
 
 Queues are widely used in programming and algorithms, e.g., in breadth-first search (BFS), task scheduling, and solving problems with first-in-first-out (FIFO) requirements.
@@ -62,7 +68,19 @@ The linked list-based queue is a popular choice due to its simplicity, but depen
 When implementing a queue using a linked list, its essential to be aware of potential memory overhead associated with the pointers in the linked list nodes.
 
 
+The implementation of the queue using a linked list involves using the provided LinkedListWithTail class. The queue class is created with the following methods:
 
+constructor(): Initializes the queue with an empty linked list.
+
+enqueue(value): Adds an element to the end of the queue using the append() method of the linked list.
+
+dequeue(): Removes and returns the element from the front of the queue using the deleteFirst() method of the linked list.
+
+isEmpty(): Checks if the queue is empty by calling the isEmpty() method of the linked list.
+
+getSize(): Returns the size of the queue by calling the getSize() method of the linked list.
+
+print(): Prints the elements of the queue by calling the print() method of the linked list.
 
 
 
