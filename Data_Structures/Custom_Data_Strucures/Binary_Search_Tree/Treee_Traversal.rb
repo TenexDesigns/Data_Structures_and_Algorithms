@@ -32,21 +32,37 @@ Pre-Order
 2.Visit the left subtree
 3.Visit the right subtree
 
+      preorder(root){
+
+        if(root){
+            console.log(root.value)
+
+            this.preorder(root.left)
+            this.preorder(root.right)
+        }
+    }
 
 
 
 
+Inorder Traversal
+1.Visist the left subtree
+2.Read the data of the node
+3.Visit the right subtree 
 
+           
+inorder(root){
+        if(root){
+            this.inorder(root.left)
+            console.log(root.value)
+            this.inorder(root.right)
+        }
+    }
 
-
-
-
-
-
-
-
-
-
+Postorder Traversal
+     1.Visit the left subtree
+     2.Visit the right subtree
+     3.Read the data of the node
 
 
 
