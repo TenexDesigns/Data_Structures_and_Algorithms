@@ -1,9 +1,7 @@
 To implement a queue using the linked list (LinkedListWithTail class provided), we can use the append(value) method to enqueue (add) elements to the end of the queue and the deleteFirst() method to dequeue (remove) elements from the front of the queue.
 
-Let's create a queue class using the linked list:
+Lets create a queue class using the linked list:
 
-javascript
-Copy code
 class Queue {
   constructor() {
     this.linkedList = new LinkedListWithTail();
@@ -61,7 +59,7 @@ Additional Information:
 
 Queues are widely used in programming and algorithms, e.g., in breadth-first search (BFS), task scheduling, and solving problems with first-in-first-out (FIFO) requirements.
 The linked list-based queue is a popular choice due to its simplicity, but depending on the use case and language, other data structures like dynamic arrays or circular buffers might be preferred for better memory locality and cache performance.
-When implementing a queue using a linked list, it's essential to be aware of potential memory overhead associated with the pointers in the linked list nodes.
+When implementing a queue using a linked list, its essential to be aware of potential memory overhead associated with the pointers in the linked list nodes.
 
 
 
