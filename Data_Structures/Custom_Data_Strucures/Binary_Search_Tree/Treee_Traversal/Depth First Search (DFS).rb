@@ -101,12 +101,49 @@ These three methods help you traverse and explore the tree nodes in different or
 In the implementation above, you can observe how the recursive calls backtrack from left and right subtrees to the parent node, ultimately reaching the root node, and then proceed with other branches of the tree.
 
 
+      More  Eaxplanantion
+***************************************************************************************************************************************     
 
+      The code you provided is a JavaScript implementation of a Binary Search Tree (BST) with depth-first search methods: preorder, inorder, and postorder.
+
+Depth-first search (DFS) is a method for traversing or searching tree or graph data structures. The algorithm starts at the root (selecting some arbitrary node as the root in the case of a graph) and explores as far as possible along each branch before backtracking.
+
+Heres a breakdown of the DFS methods in your code:
+
+preorder(root): In a preorder traversal, the current node is visited first, then the left subtree, and finally the right subtree. Heres the code:
+preorder(root) {
+    if (root) {
+        console.log(root.value); // Visit the root first
+        this.preorder(root.left); // Then traverse the left subtree
+        this.preorder(root.right); // Finally, traverse the right subtree
+    }
+}
+inorder(root): In an inorder traversal, the left subtree is visited first, then the current node, and finally the right subtree. Heres the code:
+inorder(root) {
+    if (root) {
+        this.inorder(root.left); // First traverse the left subtree
+        console.log(root.value); // Then visit the root
+        this.inorder(root.right); // Finally, traverse the right subtree
+    }
+}
+postorder(root): In a postorder traversal, the left subtree is visited first, then the right subtree, and finally the current node. Heres the code:
+postorder(root) {
+    if (root) {
+        this.postorder(root.left); // First traverse the left subtree
+        this.postorder(root.right); // Then traverse the right subtree
+        console.log(root.value); // Finally, visit the root
+    }
+}
+When you call bst.preorder(bst.root), bst.inorder(bst.root), or bst.postorder(bst.root), it will print out the values of the nodes in the order they are visited in a preorder, inorder, or postorder traversal, respectively. For your tree, the output would be:
+
+Preorder: 10, 7, 5, 3, 9, 8, 15, 12, 20, 19, 22
+Inorder: 3, 5, 7, 8, 9, 10, 12, 15, 19, 20, 22
+Postorder: 3, 5, 8, 9, 7, 12, 19, 22, 20, 15, 10
 
       More  Eaxplanantion
 ***************************************************************************************************************************************      
 
-      In the context of a Binary Search Tree (BST), Depth-First Search (DFS) refers to the traversal algorithm that explores the tree's nodes in depth before visiting its siblings. We'll implement the pre-order, in-order, and post-order traversal methods using recursion in JavaScript:
+      In the context of a Binary Search Tree (BST), Depth-First Search (DFS) refers to the traversal algorithm that explores the trees nodes in depth before visiting its siblings. Well implement the pre-order, in-order, and post-order traversal methods using recursion in JavaScript:
 
 Pre-order Traversal (Root-Left-Right):
 In pre-order traversal, we visit the current node first, then traverse the left subtree, and finally the right subtree.
