@@ -1,7 +1,36 @@
-In JavaScript, a graph is a non-linear data structure that consists of a set of vertices (nodes) and a set of edges connecting these vertices. Graphs can be used to represent various real-world relationships, such as social networks, transportation networks, and more.
+In JavaScript, a graph is a non-linear data structure that consists of a set of vertices (nodes) and a set of edges connecting these vertices.
+  Trees are a specific type of graph data strcure
+There is no hierachy in graph and there is no set way to read a graph
+
+  Graphs can be used to represent various real-world relationships, such as social networks, transportation networks, and more.
 
 Graphs can be categorized into two main types: directed graphs (digraphs) and undirected graphs. In directed graphs, edges have a direction, indicating a one-way relationship, while undirected graphs have symmetric relationships without any direction.
 
+
+       Types of Graphs
+    Bases On the characteriscit of their edges, graphs can be categorized into two types
+        1.Directed grpahs
+        2.Undirected Graphs
+  
+
+
+  Diarected graphs
+
+  Is a graph in which the edges have a direction
+  Edges are ususally represesnted by arrorwas pointing in the direction the graph can be traversed
+  In this graph we can travers from A to B to C, but we can not travesr from C to B to A
+  A--->B---->C
+
+
+  
+  Undirected Graph
+  
+  A graph in which the edges are bidirectional
+  The graph can be traversed in either direction
+  The absesnce of an arrow tells us that the graph is undirected
+  Here we can trevaers from A to B to C, and we can also travers from C to B to A
+  A---B----C
+  
 Methods and Operations of Graphs in JavaScript:
 
 Add Vertex: To add a new vertex (node) to the graph.
