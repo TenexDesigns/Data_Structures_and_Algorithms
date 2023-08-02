@@ -2,7 +2,7 @@ Implementation of LinkedList in Javascript:
 
 In this article, we will be implementing the LinkedList data structure in Javascript. LinkedList is a dynamic data structure, as we can add or remove elements at ease, and it can even grow as needed. Just like arrays, linked lists store elements sequentially, but they don't store the elements contiguously like an array.
 
-Now, Let's see an example of a Linked List Node:
+Now, Lets see an example of a Linked List Node:
 
 javascript
 Copy code
