@@ -1,4 +1,9 @@
 
+Types of Linked lists
+
+Singly Linked List,
+Doubly Linked List,
+Circular Linked List,
 
 
 in the above context also explain with code samples ,Circular Linked List,Doubly Linked List,Singly Linked List,
@@ -7,7 +12,8 @@ in the above context also explain with code samples ,Circular Linked List,Doubly
 
   Sure! Lets explain Circular Linked List, Doubly Linked List, and Singly Linked List, and provide code samples for each of them.
 
-Singly Linked List:
+1.Singly Linked List:
+    
 In a Singly Linked List, each node points to the next node in the list. It has a head that points to the first node and the last node points to null, indicating the end of the list.
 
 javascript
