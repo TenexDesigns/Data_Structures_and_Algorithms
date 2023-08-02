@@ -1,7 +1,8 @@
 Linked lists are versatile and can be applied in a variety of scenarios. Here are a few more examples:
 
 1.Polynomial Representation: 
-Linked lists can be used to represent polynomials. Each node of the linked list can represent a term of the polynomial, where the coefficient and power are stored in the node.
+Linked lists can be used to represent polynomials. Each node of the linked list can represent a term of the polynomial,
+where the coefficient and power are stored in the node.
 Heres a simplified example:
 
 class Node {
