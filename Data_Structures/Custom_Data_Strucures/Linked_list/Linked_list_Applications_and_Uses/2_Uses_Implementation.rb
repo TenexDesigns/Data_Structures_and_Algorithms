@@ -1,7 +1,8 @@
 Linked lists have various applications in different areas of computer science. Here are a few examples of where you can apply linked lists:
 
 1.Image Viewer:
-Linked lists can be used in an image viewer where the images are ordered in a linked list, and we can traverse forward or backward to view the next or previous image. Heres a simple implementation of this idea:
+Linked lists can be used in an image viewer where the images are ordered in a linked list, and we can traverse forward or backward to view the next or previous image.
+Heres a simple implementation of this idea:
 
 
 class Node {
@@ -42,14 +43,16 @@ viewer.addImage("Image1.jpg");
 viewer.addImage("Image2.jpg");
 viewer.addImage("Image3.jpg");
 viewer.displayImages();
-In this example, each Node represents an image, and the ImageViewer class maintains a linked list of images. The addImage method adds an image to the end of the list, and the displayImages method displays all images in the list freecodecamp.org.
+In this example, each Node represents an image, and the ImageViewer class maintains a linked list of images.
+    The addImage method adds an image to the end of the list, and the displayImages method displays all images in the list freecodecamp.org.
 
 
 
 
       
 2.Browser History:
-      A doubly linked list can be used to implement a browser history. The next pointer can be used to go forward in the history, and the previous pointer can be used to go back.
+      A doubly linked list can be used to implement a browser history. The next pointer can be used to go forward in the history, 
+        and the previous pointer can be used to go back.
 
         Heres a simple implementation:
 
