@@ -152,6 +152,58 @@ while (curr !== null) {
   
 4.Problem:
   Merge two sorted linked lists into a single sorted linked list.
+
+
+  In the problem of merging two sorted linked lists into a single sorted linked list, we are typically provided with two linked lists that are already sorted in ascending order. The task is to combine these two sorted lists into a single sorted list while maintaining the sorted order.
+
+Here's the reasoning behind the solution:
+
+1. Given two sorted linked lists, we can easily compare the values of their nodes and choose the smaller value to be the next node in the merged list.
+2. We start by comparing the heads of both linked lists. The smaller value becomes the head of the merged list.
+3. Then, we move to the next nodes of the two lists, again comparing their values and selecting the smaller value to add to the merged list.
+4. We continue this process until we reach the end of one of the linked lists. At this point, we know that all the remaining elements in the other list are greater than the elements in the merged list, so we can safely append the rest of the non-empty list to the merged list.
+
+Let's implement the solution in JavaScript:
+
+```javascript
+class Node {
+    constructor(value) {
+        this.value = value;
+        this.next = null;
+    }
+}
+
+function mergeSortedLists(head1, head2) {
+    // Create a dummy node as the head of the merged list
+    const dummyHead = new Node(-1);
+    let current = dummyHead;
+
+    while (head1 && head2) {
+        if (head1.value <= head2.value) {
+            current.next = head1;
+            head1 = head1.next;
+        } else {
+            current.next = head2;
+            head2 = head2.next;
+        }
+        current = current.next;
+    }
+
+    // Append the remaining elements of the non-empty list
+    if (head1) {
+        current.next = head1;
+    } else {
+        current.next = head2;
+    }
+
+    // Return the merged list (skip the dummy head)
+    return dummyHead.next;
+}
+```
+
+In this implementation, the `mergeSortedLists` function takes two sorted linked lists as input and returns a new merged sorted linked list. We create a dummy head node to simplify the merging process. Then, we iterate through both linked lists while comparing their elements, and we append the smaller element to the merged list until one of the lists is fully traversed. Finally, we append the remaining elements of the non-empty list to the merged list.
+
+The time complexity of the merge operation is O(n + m), where n and m are the lengths of the two input linked lists, as we visit each element once. The space complexity is O(1) since we use a constant amount of extra space regardless of the size of the input lists.
 Solution:
 
 javascript
