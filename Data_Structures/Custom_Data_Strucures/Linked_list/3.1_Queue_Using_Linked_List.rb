@@ -1,5 +1,16 @@
 To implement a queue using the linked list (LinkedListWithTail class provided), we can use the append(value) method to enqueue (add) elements to the end of the queue and the deleteFirst() method to dequeue (remove) elements from the front of the queue.
 
+
+Queue:
+
+A queue is a first-in-first-out (FIFO) data structure.
+You can implement a queue using a singly linked list or a circular linked list.
+The circular linked list is more efficient for queue operations because it allows O(1) insertion at the end (enqueue) and O(1) removal from the front (dequeue).
+
+Here We Use Singly Linked List in the next file or explanantio we use circular queuue.
+
+
+  
 Lets create a queue class using the linked list:
 
 class Queue {
