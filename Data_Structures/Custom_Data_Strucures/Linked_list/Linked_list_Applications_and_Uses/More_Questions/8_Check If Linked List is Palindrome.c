@@ -265,3 +265,74 @@ To use this function, you can create a linked list and then call the `isPalindro
 
 
 
+
+
+
+
+
+Using Recursion
+---------------------------------------------------------------------------------------------------------------------
+
+To check if a linked list is a palindrome using recursion in JavaScript, you can use a singly linked list. A palindrome is a string that reads the same forward and backward. In the context of a linked list, a linked list is a palindrome if the sequence of data in the nodes is the same if traversed forward and backward.
+
+The recursive method works by comparing the first and last nodes, then the second and second last nodes, and so on. This is done by reaching the end of the linked list by recursion and then comparing the nodes as the recursive calls return. A helper function is used to keep track of the current node at the beginning of the linked list during the recursion.
+
+Here is a step-by-step JavaScript implementation:
+
+Define a Node class to represent each node in the linked list:
+class Node {
+    constructor(val) {
+        this.data = val;
+        this.next = null;
+    }
+}
+Declare a head variable to represent the head of the linked list:
+var head;
+Define a function isPalindromeRecursion(left, right) that checks if the linked list is a palindrome using recursion:
+function isPalindromeRecursion(left, right) {
+    // base case
+    if (right == null) {
+        return true;
+    }
+
+    var result = isPalindromeRecursion(left, right.next) && (left[0].data == right.data);
+    left[0] = left[0].next;
+
+    return result;
+}
+Define a function isPalindrome(head) that wraps the head node and calls isPalindromeRecursion(left, right):
+function isPalindrome(head) {
+    return isPalindromeRecursion([head], head);
+}
+Define a push(new_data) function that inserts a new Node at the front of the list:
+function push(new_data) {
+    var new_node = new Node(new_data);
+    new_node.next = head;
+    head = new_node;
+}
+Now, you can test the isPalindrome(head) function with a sample linked list:
+push('a');
+push('b');
+push('a');
+push('c');
+push('a');
+push('b');
+push('a');
+
+console.log("Is palindrome: " + isPalindrome(head));
+This will create a linked list with nodes a->b->a->c->a->b->a. The isPalindrome(head) function will return true as the linked list is a palindrome techiedelight.com.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
