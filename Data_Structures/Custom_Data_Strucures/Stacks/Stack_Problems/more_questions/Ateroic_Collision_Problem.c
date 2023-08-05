@@ -70,3 +70,76 @@ console.log(result); // Output: [-1]
 The reasoning behind this solution is similar to the previous explanation. You're using the stack to simulate the movement of asteroids and handle their collisions. When a new asteroid comes in, you check its direction and size compared to the top of the stack. Depending on the conditions, you decide whether the asteroid survives the collision or not.
 
 This approach ensures that you handle collisions between asteroids correctly, considering their sizes and directions. The time complexity of this solution is O(n), where n is the number of asteroids in the input array.
+
+
+
+
+
+
+
+Another Appprocach
+
+**************************
+To solve the asteroid collision problem in JavaScript, you can use a stack-based approach. The stack keeps track of the asteroids moving to the right. When an asteroid moving to the left is encountered, it may cause collisions. The rules of collision are handled as follows:
+
+- If the top of the stack is an asteroid moving right and is smaller in size (absolute value), it is popped from the stack because a collision occurs and the right-moving asteroid explodes.
+- If the top of the stack is an asteroid moving right and is the same size (absolute value), it is popped from the stack and the current asteroid is skipped because both asteroids explode.
+- If the top of the stack is an asteroid moving right and is bigger in size (absolute value), the current asteroid is skipped because a collision occurs and the left-moving asteroid explodes.
+- If the top of the stack is an asteroid moving left, the current asteroid is pushed to the stack because two left-moving asteroids never meet.
+
+Here's the JavaScript code implementation for your given array [-1,3,2,-3]:
+
+```javascript
+function asteroidCollision(asteroids) {
+  const stack = [];
+  
+  for (let i = 0; i < asteroids.length; i++) {
+    if (asteroids[i] > 0) {
+      stack.push(asteroids[i]);
+    } else {
+      while (stack.length !== 0 && stack[stack.length - 1] > 0 && stack[stack.length - 1] < Math.abs(asteroids[i])) {
+        stack.pop();
+      }
+      if (stack.length !== 0 && stack[stack.length - 1] === Math.abs(asteroids[i])) {
+        stack.pop();
+      } else if (stack.length === 0 || stack[stack.length - 1] < 0) {
+        stack.push(asteroids[i]);
+      }
+    }
+  }
+  
+  return stack;
+}
+
+// Example usage:
+const asteroids = [-1,3,2,-3];
+console.log(asteroidCollision(asteroids)); // Output: [-1]
+```
+
+In this solution, the stack is used to keep track of the asteroids that are moving right. When an asteroid moving left is encountered, the top of the stack is checked. If it's an asteroid moving right, their sizes are compared to decide which one explodes. This process is continued until all asteroids have been processed.
+
+This code implementation is a modified version of the solution found in [Source 5](https://www.geeksforgeeks.org/asteroid-collision/), [Source 9](https://leetcode.com/problems/asteroid-collision/discuss/109694/JavaScript-solution-using-stack), and [Source 12](https://www.techiedelight.com/asteroid-collision/).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
