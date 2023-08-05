@@ -63,6 +63,7 @@ Top 5 datastrucres to lears
                         - Brath first search
                         - Dijikstras algorithm
             - Topological sort
+            - Union find
            - Loop in graph
 
 
