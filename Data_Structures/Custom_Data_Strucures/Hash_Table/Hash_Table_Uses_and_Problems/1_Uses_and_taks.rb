@@ -1,4 +1,6 @@
-The above hash table implementation can be used in various practical scenarios to efficiently store and retrieve key-value pairs. Here are some examples of problems and tasks that can be solved using the hash table, along with their solutions using the provided hash table implementation in JavaScript:
+The above hash table implementation can be used in various practical scenarios to efficiently store and retrieve key-value pairs.
+Here are some examples of problems and tasks that can be solved using the hash table,
+  along with their solutions using the provided hash table implementation in JavaScript:
 
 Task: Storing User Information
 Problem: You want to store information about users, such as their names, emails, and ages.
