@@ -1,7 +1,8 @@
 Trees and Binary Search Trees (BSTs) are fundamental data structures in computer science that are used to organize and store data in a hierarchical manner. Lets go through each of them:
 
 Tree Data Structure:
-A tree is a hierarchical data structure that consists of nodes connected by edges. Each tree has a root node, which is the topmost node in the hierarchy, and each node can have zero or more child nodes. Nodes with no children are called leaves. Trees are commonly used to represent hierarchical relationships, such as organizational structures, file systems, and network routing.
+A tree is a hierarchical data structure that consists of nodes connected by edges. Each tree has a root node, which is the topmost node in the hierarchy, and each node can have zero or more child nodes.
+Nodes with no children are called leaves. Trees are commonly used to represent hierarchical relationships, such as organizational structures, file systems, and network routing.
 
 A tree is a non-linear data strucure, compared to arrys, linked lists, stacks and queues which are linear data strucures.  
 In linear data  strucures , the time required to search is proportional to the size of the data set.
