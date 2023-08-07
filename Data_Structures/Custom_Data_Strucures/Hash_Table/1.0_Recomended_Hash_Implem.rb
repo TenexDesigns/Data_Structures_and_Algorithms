@@ -2,11 +2,15 @@ This is the recomended impleemntion because it considers the follwing
 
 
 
-Load Factor: The load factor is the ratio of the number of filled slots to the total number of slots in the hash table. Maintaining a low load factor (e.g., below 0.7 or 0.8) helps reduce the likelihood of collisions. As the number of elements in the hash table increases, resizing the hash table and rehashing the elements can be done to keep the load factor low.
+Load Factor: The load factor is the ratio of the number of filled slots to the total number of slots in the hash table.
+Maintaining a low load factor (e.g., below 0.7 or 0.8) helps reduce the likelihood of collisions.
+    As the number of elements in the hash table increases, resizing the hash table and rehashing the elements can be done to keep the load factor low.
 
-Good Hash Function: Using a good hash function is crucial to minimize collisions. A good hash function should uniformly distribute the keys across the hash table, reducing the chances of multiple keys mapping to the same index. It should aim to produce as few collisions as possible. Various techniques and algorithms can be used to design effective hash functions for different types of data.
+Good Hash Function: Using a good hash function is crucial to minimize collisions. A good hash function should uniformly distribute the keys across the hash table, 
+    reducing the chances of multiple keys mapping to the same index. It should aim to produce as few collisions as possible. Various techniques and algorithms can be used to design effective hash functions for different types of data.
 
-Separate Chaining with Good Linked List or array: If you choose to use separate chaining to handle collisions, consider using a good linked list implementation. For example, using singly linked lists instead of doubly linked lists can reduce memory overhead and improve cache locality.
+Separate Chaining with Good Linked List or array: If you choose to use separate chaining to handle collisions, consider using a good linked list implementation. 
+            For example, using singly linked lists instead of doubly linked lists can reduce memory overhead and improve cache locality.
     
 We also search for uniquesnes of the keys being input.
 
@@ -18,7 +22,7 @@ class HashTable {
     this.buckets = new Array(initialCapacity);
     this.numBuckets = this.buckets.length;
     this.size = 0;
-    this.MAX_LOAD_FACTOR = 0.75;
+    this.MAX_LOAD_FACTOR = 0.7;
   }
 
   # hash(key) {
@@ -39,6 +43,36 @@ class HashTable {
   return Math.abs(hash) %  this.numBuckets;
 }
 
+
+      /* Think of the arrangement of this hash table like this. It is an array of arrays that house other arrays,
+      [
+          [
+              [k,v],[k,v]
+          ],
+          
+          [
+              [k,v],[k,v]
+          ]
+      ],
+      where th hash function gives you the inedx to store the key valye arry in
+let hashTable = [
+  //Key Value pair     /Index from Hash function
+    [['key1','value1']],  //0
+    // 0      //1
+    [['key2','value2']],  //1
+    // 0      //1
+    [['key3','value3']],  //2
+    // 0      //1
+    [['key4','value4']],  //3
+    // 0      //1
+    [['key5.0','value5.0'],[['key5.1','value5.1'],[['key5.2','value5.2']],  //4  THis occurs when there is a collison(when hash function genrates same index from key). To access key or value  from a clollided ayyya
+    // hashTable[4][1][0] -->    'key5.1' To access key in a coliided index
+
+    //The key value pair is an array, and they are stored on index 0 and 1 in that array
+]
+
+console.log(arr[1][0])
+          /*
     #1.Uniqueens of keys
   set(key, value) {
     const index = this.hash(key);
@@ -81,11 +115,16 @@ class HashTable {
   get(key) {
     const index = this.hash(key);
     if (this.buckets[index]) {
-      for (const item of this.buckets[index]) {
-        if (item[0] === key) {
-          return item[1];
+         let len = this.buckets[index]
+
+    for(let i = 0; i <len.length;i++){
+        if( len[i][0]=== key)
+        {
+            return len[i]
         }
-      }
+    }
+      
+
     }
     return undefined;
   }
@@ -107,14 +146,19 @@ class HashTable {
   has(key) {
     const index = this.hash(key);
     if (this.buckets[index]) {
-      for (const item of this.buckets[index]) {
-        if (item[0] === key) {
-          return true;
+         let len = this.buckets[index]
+        
+    for(let i = 0; i <len.length;i++){
+        if( len[i][0]=== key)
+        {
+            return true
         }
-      }
+    }
+        
     }
     return false;
   }
+          
 
   getSize() {
     return this.size;
