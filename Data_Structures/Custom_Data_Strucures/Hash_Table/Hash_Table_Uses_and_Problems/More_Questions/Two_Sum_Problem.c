@@ -1,3 +1,20 @@
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+You can return the answer in any order.
+
+ 
+
+
+
+
+
+
+
+
+-------------------------
+
 To determine if two arrays have common elements using a hash table (also known as an object in JavaScript), you can follow these steps:
 
 1. Create a hash table (object) to store the elements of the first array.
