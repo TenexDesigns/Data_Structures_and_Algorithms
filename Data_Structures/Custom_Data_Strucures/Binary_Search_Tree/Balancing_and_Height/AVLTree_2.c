@@ -2,7 +2,7 @@
 
 AVL trees, named after its inventors, Adelson-Velsky and Landis, are a type of self-balancing binary search tree. The main concept behind AVL trees is that the height of the left and right subtrees of any node differs by at most one. This property is maintained through a process called rotation which occurs after every insertion or deletion operation. If at any time the difference in heights is more than one, rebalancing is done to restore this property [Source 2](https://www.geeksforgeeks.org/introduction-to-avl-tree/), [Source 4](https://en.wikipedia.org/wiki/AVL_tree), [Source 12](https://www.cs.cornell.edu/courses/cs2112/2021fa/lectures/avl/).
 
-Let's consider an example of AVL tree in JavaScript:
+Lets consider an example of AVL tree in JavaScript:
 
 ```javascript
 class Node {
