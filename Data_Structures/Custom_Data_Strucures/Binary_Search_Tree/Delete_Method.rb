@@ -1,4 +1,4 @@
-
+Cases To consider When Deleting  a node
 
 
 
@@ -22,7 +22,7 @@ class BinarySearchTree {
 
     deleteNode(node, value) {
         if (node === null) {
-            return null; // Node not found, do nothing.
+            return null; // If Root Node is empty, do nothing.
         }
 
         if (value === node.value) {
