@@ -101,8 +101,59 @@ This algorithm has a time complexity of O(n) since it iterates over the array an
 
 
 
+MORE EXPLAANNTION
+----------------------------------
+    To solve this problem, you can use a hash map to keep track of the cumulative sum of the elements encountered so far and their corresponding indices. When you encounter a cumulative sum that you've seen before, it means there's a subarray with sum 0 between the indices where you first encountered that sum and the current index. The length of the subarray is the difference between the current index and the index where the sum was first encountered.
 
+Here's how you can approach this problem using JavaScript:
 
+```javascript
+function maxLengthSubarrayWithSumZero(nums) {
+    const sumMap = new Map(); // Store cumulative sum and its index
+    let maxLen = 0;
+    let sum = 0;
+
+    for (let i = 0; i < nums.length; i++) {
+        sum += nums[i];
+
+        if (sum === 0) {
+            maxLen = i + 1;
+        } else if (sumMap.has(sum)) {
+            maxLen = Math.max(maxLen, i - sumMap.get(sum));
+        } else {
+            sumMap.set(sum, i);
+        }
+    }
+
+    return maxLen;
+}
+
+// Example usage
+const nums = [15, -2, 2, -8, 1, 7, 10, 23];
+console.log(maxLengthSubarrayWithSumZero(nums)); // Output: 5 (subarray: [2, -8, 1, 7, 10])
+```
+
+**Explanation:**
+
+1. Create a hash map `sumMap` to store cumulative sums as keys and their corresponding indices as values.
+
+2. Initialize variables `maxLen` (maximum subarray length) and `sum` (cumulative sum) to 0.
+
+3. Iterate through the array `nums` and calculate the cumulative sum `sum` by adding each element.
+
+4. If the current cumulative sum is 0, update `maxLen` to the current index + 1, as this means there's a subarray with sum 0 starting from the beginning of the array.
+
+5. If the current cumulative sum is not 0 and it already exists in the `sumMap`, update `maxLen` to the maximum of its current value and the difference between the current index and the index stored in `sumMap` for that cumulative sum. This indicates a subarray with sum 0 in between.
+
+6. If the current cumulative sum is not in the `sumMap`, add it to the map with its current index.
+
+7. After iterating through the array, return `maxLen`, which represents the length of the largest subarray with sum 0.
+
+**Reasoning:**
+
+This approach efficiently identifies subarrays with sum 0 by keeping track of cumulative sums using a hash map. By using the hash map, you can quickly determine if a cumulative sum has been encountered before and calculate the length of the subarray with sum 0 when needed. The algorithm iterates through the array once, performing constant-time operations for each element, resulting in a linear time complexity of O(n), where n is the number of elements in the input array.
+
+The hash map provides fast lookups and insertions, making the solution efficient in terms of time complexity
 
 
 
