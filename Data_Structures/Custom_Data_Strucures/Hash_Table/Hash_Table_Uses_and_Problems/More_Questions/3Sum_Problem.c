@@ -74,9 +74,33 @@ This code will output `[[ -1, -1, 2 ], [ -1, 0, 1 ]]`, which are the distinct tr
 
 The reasoning behind using memoization in this solution is that memoization is not necessary for this specific problem. The recursive function explores all possible combinations of triplets without overlapping subproblems, so there are no redundant calculations to avoid.
 
-It's worth noting that the time complexity of this solution is O(n^2), where n is the length of the input array. The sorting operation takes O(n log n) time, and the nested loop inside the recursive function takes O(n) time.
+Its worth noting that the time complexity of this solution is O(n^2), where n is the length of the input array. The sorting operation takes O(n log n) time, and the nested loop inside the recursive function takes O(n) time.
 
+AVOID DUPLETES
+  -------------------------
 
+  In the provided solution for the "3Sum problem, unique triplets are ensured through careful handling of duplicates while iterating through the array and finding the triplets. Here's how the solution ensures unique triplets:
+
+1. **Sorting:** The array is sorted in non-decreasing order before processing. Sorting the array helps in identifying duplicates and also allows us to efficiently use the two-pointer approach.
+
+2. **Skip Duplicate Starting Elements:** While iterating through the array with the main loop, if the current element is a duplicate of the previous element, we skip it. This step ensures that we consider only unique starting elements for triplets. This is achieved by the following code snippet:
+
+   ```javascript
+   if (i > 0 && nums[i] === nums[i - 1]) {
+       continue; // Skip duplicates
+   }
+   ```
+
+3. **Skip Duplicate Elements Inside the Loop:** Inside the loop that uses the two-pointer approach, we skip duplicates by incrementing the `left` pointer while the next element is the same as the current one, and decrementing the `right` pointer while the previous element is the same as the current one:
+
+   ```javascript
+   while (nums[left] === nums[left + 1]) left++; // Skip duplicates
+   while (nums[right] === nums[right - 1]) right--; // Skip duplicates
+   ```
+
+By carefully skipping duplicates in both the main loop and the two-pointer approach, the solution ensures that the resulting triplets are unique. This is crucial because the problem statement specifies that the solution set must not contain duplicate triplets.
+
+With these steps, the solution avoids generating duplicate triplets while searching for all unique triplets that sum up to zero.
 
 
 
