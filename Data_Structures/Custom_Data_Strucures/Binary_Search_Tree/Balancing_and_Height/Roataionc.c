@@ -206,10 +206,130 @@ balanc factor = -1 - (1) = -2
 
 
 
+When choosing which rotation to use, the decision depends on the balance factor and the imbalance location. The following conditions apply:
 
+- If the balance factor is greater than 1 and the imbalance is in the left subtree of the left child (LL case), perform a right rotation.
+- If the balance factor is less than -1 and the imbalance is in the right subtree of the right child (RR case), perform a left rotation.
+- If the balance factor is greater than 1 and the imbalance is in the right subtree of the left child (LR case), perform a left-right rotation.
+- If the balance factor is less than -1 and the imbalance is in the left subtree of the right child (RL case), perform a right-left rotation.
 
+In your examples, the balance factor is calculated as "left subtree height - right subtree height" for each node. Depending on the sign and magnitude of the balance factor, you determine the rotation needed.
 
+For larger binary trees, the same principles apply. After insertion or deletion, you need to check the balance factor of each node along the path from the inserted/deleted node to the root and perform the necessary rotations to restore balance.
 
+Heres a JavaScript implementation of an AVL tree with insertions and rotations for the scenarios you mentioned:
+
+```javascript
+class TreeNode {
+    constructor(value) {
+        this.value = value;
+        this.left = null;
+        this.right = null;
+        this.height = 1;
+    }
+}
+
+class AVLTree {
+    constructor() {
+        this.root = null;
+    }
+
+    getHeight(node) {
+        return node ? node.height : 0;
+    }
+
+    getBalanceFactor(node) {
+        return node ? this.getHeight(node.left) - this.getHeight(node.right) : 0;
+    }
+
+    leftRotate(y) {
+        const x = y.right;
+        const T2 = x.left;
+
+        x.left = y;
+        y.right = T2;
+
+        y.height = Math.max(this.getHeight(y.left), this.getHeight(y.right)) + 1;
+        x.height = Math.max(this.getHeight(x.left), this.getHeight(x.right)) + 1;
+
+        return x;
+    }
+
+    rightRotate(x) {
+        const y = x.left;
+        const T2 = y.right;
+
+        y.right = x;
+        x.left = T2;
+
+        x.height = Math.max(this.getHeight(x.left), this.getHeight(x.right)) + 1;
+        y.height = Math.max(this.getHeight(y.left), this.getHeight(y.right)) + 1;
+
+        return y;
+    }
+
+    leftRightRotate(node) {
+        node.left = this.leftRotate(node.left);
+        return this.rightRotate(node);
+    }
+
+    rightLeftRotate(node) {
+        node.right = this.rightRotate(node.right);
+        return this.leftRotate(node);
+    }
+
+    insert(value) {
+        this.root = this._insert(this.root, value);
+    }
+
+    _insert(node, value) {
+        if (!node) {
+            return new TreeNode(value);
+        }
+
+        if (value < node.value) {
+            node.left = this._insert(node.left, value);
+        } else if (value > node.value) {
+            node.right = this._insert(node.right, value);
+        } else {
+            return node; // Duplicate values not allowed
+        }
+
+        node.height = 1 + Math.max(this.getHeight(node.left), this.getHeight(node.right));
+
+        const balance = this.getBalanceFactor(node);
+
+        // Left Heavy
+        if (balance > 1) {
+            if (value < node.left.value) {
+                return this.rightRotate(node);
+            } else {
+                return this.leftRightRotate(node);
+            }
+        }
+
+        // Right Heavy
+        if (balance < -1) {
+            if (value > node.right.value) {
+                return this.leftRotate(node);
+            } else {
+                return this.rightLeftRotate(node);
+            }
+        }
+
+        return node;
+    }
+}
+
+const avlTree = new AVLTree();
+const elements = [30, 20, 10];
+elements.forEach(element => avlTree.insert(element));
+console.log(avlTree.root);
+```
+
+This implementation handles the insertion of elements into an AVL tree and performs rotations as needed to maintain balance. It includes left, right, left-right, and right-left rotations.
+
+Remember, AVL trees are just one type of self-balancing binary search tree,
 
 
 
