@@ -2,11 +2,74 @@
 
 Red-Black Trees are a type of self-balancing binary search tree where every node has a color attribute, either red or black. The balancing of the tree is maintained by applying a set of rules, called red-black properties:
 
+
+               NULL and  LEAF nodes
+------------------------------------------------------
+Note- leaf - Is a node that is null in red-blck tree
+    - Node - Is a node that have a value tree
+    - Null nodes are not considered children of other nodes in the Red-Black Tree.
+    - When calculating black height or determining descendant leaf nodes, you exclude null nodes and consider only the actual nodes in the tree with values.
+    - Null nodes . They are used to simplify the structure and handling of the tree but are not part of the trees logical hierarchy.
+    - Null nodes are typically introduced to serve as placeholders for real nodes and help ensure that every path in the tree has the same number of black nodes, which is crucial for maintaining the balanced properties of the Red-Black Tree.
+    - The black height and the concept of descendant leaf nodes refer to the actual nodes in the tree that have values, excluding null nodes.
+    - Null nodes (sentinel nodes) are not typically considered children of other nodes; they are used to simplify tree operations.
+  
+           BLACK NODES
+------------------------------------------------------
+    - A black node can have black or red children, and the number of children can vary (0, 1, or 2).
+    - The specific colors of children for a black node do not have strict conditions; they can be black or red without violating any Red-Black Tree properties.
+    - A black node in a Red-Black Tree can have either black or red children. There are no specific restrictions on the colors of the children of a black node.
+    - A black node can have black or red children.
+
+
+          RED NODES
+------------------------------------------------------
+    - A red node must have two black children.
+    - A red node must have two black children.The children can be null or have values but their color is black
+    - If a node is red, then both its children are black.
+    - In a Red-Black Tree, a red node must have two black children. This property ensures that no two red nodes are adjacent along any path from the root to a leaf.
+  
+  
 1. Every node is either red or black.
 2. The root is black.
 3. All leaves (null or NIL nodes) are black.
 4. If a node is red, then both its children are black.
 5. Every path from a node to its (Nil or NULL) descendant leaves contains the same number of black nodes [Source 1](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree), [Source 3](https://www.geeksforgeeks.org/introduction-to-red-black-tree/).
+
+e.g The coloring of this willb
+     8
+    / \
+   5   15
+  / \  / \ 
+ n  n 12  19    
+     / \   / \
+    9  13 n  23
+   / \ /\    / \       
+   n n n n  n   n
+
+
+Red-Blck Tree of the above
+
+      8 (Black)
+    /     \
+   5(Black)  15(Red)
+  / \     /       \ 
+ n   n   12(Black) 19(Black)
+         / \          /   \
+      9(Red) 13(Red) n   23(Red)
+     /  \   / \           / \
+    n   n  n   n         n   n
+
+
+The Null nodes are all Black
+
+
+
+
+
+
+
+
 
 Here is an example of a Red-Black tree in JavaScript:
 
