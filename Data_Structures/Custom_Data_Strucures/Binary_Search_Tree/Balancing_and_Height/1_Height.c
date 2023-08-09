@@ -15,3 +15,48 @@ Here are some key points about the height of a binary search tree:
 6. **Average Height:** The average height of a randomly constructed binary search tree is typically close to log2(N), assuming that the data is inserted in a random order. This is why balanced trees are preferred for efficient operations, as they aim to maintain a height close to this average.
 
 In summary, the height of a binary search tree is a fundamental concept that affects the efficiency of various operations. Balanced binary search trees are designed to keep the height as small as possible, ensuring that operations remain efficient regardless of the order of insertion or deletion.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+   
+right rotation(when becomes greater than 1 and the imbalance is in the left subtree of the left child.  ), left loation(node becomes less than -1 and the imbalance is in the right subtree of the right child), left-right rotation( node becomes greater than 1 and the imbalance is in the right subtree of the left child.),
+    
+    
+
+   
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
