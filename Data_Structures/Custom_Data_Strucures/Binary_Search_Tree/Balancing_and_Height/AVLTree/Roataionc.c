@@ -33,21 +33,43 @@ Balance factor  = leftsub tree - Right sub tree
                  |   T3  T4
 
 
-
-Note - If a sub tree has no children nodes you put its length as -1. If there is no subtree on either side ,either rigth or left, we give it -1,
-     - If a node  has children nodes, you count edges upto the deepest node of that node
-
-
-
 So in th above case
 
-Left sub tree = -1
+Left sub tree = 0
 right sub tree  = 2
 
-balanc factor = -1 -(2) = -3
+balanc factor = 0 -(2) = -3
 
 
+Note  - If  node has no children ,(it is  leaf node) its height becomes 0 
+      - If no node is present, the we put -1
+     - If a node  has children nodes, you count edges upto the deepest node of that node and that becomes the heith to be used as eithr lst or rst
 
+               66
+              /  \
+            55    77
+           /                                                                            
+          15                   
+                             
+Left sub tree = 1
+right sub tree  = 0
+
+balanc factor = 1 -(0) = 1                  So no balancing needed here
+   -------------------------------------------------------------
+                             
+                             
+                                
+               66
+              /
+            55
+           /
+         15
+
+Left sub tree = 1
+right sub tree  = -1
+
+balanc factor = 1 -(1) = 2             there is an imbalance  on the left side of the node 66,we call node 66 a critical node. Here we use left roatatio n
+----------------------------------------------------------
 
 
 
