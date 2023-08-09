@@ -181,9 +181,19 @@ graph.removeEdge('A','B')
 graph.display()
 
 
-
-
-
+PRINTS THE FOLLWING
+----------------------------------------------
+Map(3) {
+  'A' => Set(1) { 'B' },
+  'B' => Set(2) { 'A', 'C' },
+  'C' => Set(1) { 'B' }
+}
+false
+Map(3) {
+  'A' => Set(0) {},
+  'B' => Set(1) { 'C' },
+  'C' => Set(1) { 'B' }
+}
 
 
 
