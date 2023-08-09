@@ -2,7 +2,7 @@ Graph representation
 
 Graph can be represented in code using two ways
 1.Adjacency matrix
-2.Adjacency List
+2.Adjacency List (Recommended)
 
 
 
@@ -90,16 +90,95 @@ Adjacency Matrix Vs Adjacency List
 
 
 
+class Graph{
+
+    constructor(){
+        this.adjacencyList =new Map()
+        
+     }
+
+     
+
+     addVertex(vertex){
+        if(!this.adjacencyList.has(vertex)){
+            this.adjacencyList.set(vertex,new Set())
+        }
+     }
+
+     addEdge(vertex1,vertex2){
+        if(!this.adjacencyList.has(vertex1)){
+            this.addVertex(vertex1)
+        }
+        if(!this.adjacencyList.has(vertex2)){
+            this.addVertex(vertex2)
+        }
+
+        this.adjacencyList.get(vertex1).add(vertex2)
+        this.adjacencyList.get(vertex2).add(vertex1)
+     }
+
+     hasEdge(vertex1,vertex2){
+        if(!this.adjacencyList.get(vertex1) || !this.adjacencyList.get(vertex1)){
+            return "This vertex is not available"
+
+        }
+        else{
+            return(
+                this.adjacencyList.get(vertex1).has(vertex2)&&
+                this.adjacencyList.get(vertex2).has(vertex1)
+            )
+
+        }
+       
+
+     }
 
 
 
+     display(){
+
+     console.log(this.adjacencyList)
+       
+     }
+
+     removeEdge(vertex1,vertex2){
+        this.adjacencyList.get(vertex1).delete(vertex2)
+        this.adjacencyList.get(vertex2).delete(vertex1)
+
+     }
+
+     removeVertex(vertex){
+        if(!this.adjacencyList.get(vertex)){
+            return "Vetex is not there"
+        }
+        for (let conectedvertex of this.adjacencyList.get(vertex)){
+            this.removeEdge(vertex,conectedvertex)
+
+        }
+
+        this.adjacencyList.delete(vertex)
+
+     }
+}
+
+const graph = new Graph()
+
+graph.addVertex("A")
+graph.addVertex("B")
+graph.addVertex("C")
 
 
+graph.addEdge("A","B")
+graph.addEdge("B","C")
+
+graph.display() 
+
+console.log(graph.hasEdge('A','C'))
+
+graph.removeEdge('A','B')
 
 
-
-
-
+graph.display()
 
 
 
