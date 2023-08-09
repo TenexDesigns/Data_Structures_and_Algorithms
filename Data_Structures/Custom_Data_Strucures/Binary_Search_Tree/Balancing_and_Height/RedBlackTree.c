@@ -29,7 +29,11 @@ Note- leaf - Is a node that is null in red-blck tree
     - If a node is red, then both its children are black.
     - In a Red-Black Tree, a red node must have two black children. This property ensures that no two red nodes are adjacent along any path from the root to a leaf.
   
-  
+
+
+
+Reules  for every red black tree.
+
 1. Every node is either red or black.
 2. The root is black.
 3. All leaves (null or NIL nodes) are black.
