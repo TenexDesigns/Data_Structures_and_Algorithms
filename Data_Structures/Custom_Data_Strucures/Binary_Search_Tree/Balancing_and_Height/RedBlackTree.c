@@ -6,7 +6,7 @@ Red-Black Trees are a type of self-balancing binary search tree where every node
 2. The root is black.
 3. All leaves (null or NIL nodes) are black.
 4. If a node is red, then both its children are black.
-5. Every path from a node to its descendant leaves contains the same number of black nodes [Source 1](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree), [Source 3](https://www.geeksforgeeks.org/introduction-to-red-black-tree/).
+5. Every path from a node to its (Nil or NULL) descendant leaves contains the same number of black nodes [Source 1](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree), [Source 3](https://www.geeksforgeeks.org/introduction-to-red-black-tree/).
 
 Here is an example of a Red-Black tree in JavaScript:
 
