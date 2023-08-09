@@ -57,18 +57,17 @@ balanc factor = -1 -(2) = -3
 Here are the four basic rotations used for balancing an AVL tree:
 
 
-1. Right Rotation (RR Rotation):
-   - Used when balance factor of a node becomes greater than 1 and the imbalance is in the left subtree of the left child.
+1. Right Rotation:
+   - Used when  balance factor of a node becomes greater than 1 and the imbalance is in the left subtree of the left child. 
 
-2. Left Rotation (LL Rotation):
-   - Used when the balance factor of a node becomes greater than 1 and the imbalance is in the left subtree of the left child.
+2. Left Rotation 
+   - Used when the balance factor of a node becomes less than -1 and the imbalance is in the right subtree of the right child..
       
 3. Left-Right Rotation (LR Rotation):
-   - Used when the balance factor of a node becomes greater than 1 and the imbalance is in the right subtree of the left child.
+   - Used when the balance factor of a node becomes greater than 1 and the imbalance is in the right subtree of the left child. 
    
 4. Right-Left Rotation (RL Rotation):
-   - Used when the balance factor of a node becomes less than -1 and the imbalance is in the left subtree of the right child.
-
+   - Used when balance factor of a node becomes less than -1 and the imbalance is in the left subtree of the right child.
 
 The balance factor affects the direction or choice of rotation. If the balance factor is greater than 1, a left rotation is performed. If the balance factor is less than -1, a right rotation is performed.
 The specific rotation (left-right or right-left) depends on the specific imbalance within the tree.
@@ -169,7 +168,7 @@ balanc factor = 1 - (-1) = 2
 
 
 
-4. 10,30,20 -(Right-left rotation) balance factor of a node becomes less than -1 and the imbalance is in the left subtree of the right child.  
+4. 10,30,20 -(Right-left rotation) Used when balance factor of a node becomes less than -1 and the imbalance is in the left subtree of the right child.  
 Here you do a right-left rotation, (Right rotation first)putting 20 in the place of 30  and 30 in the place of 20 then (Left-rotation next)do a left rotaion on the  resulting tree  
 
 
