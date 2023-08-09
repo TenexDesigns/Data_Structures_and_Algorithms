@@ -27,7 +27,7 @@ In the following descriptions, assume node A is the unbalanced node, and B, C, a
  T1  C
     / \
    T2  T3
-```
+
 
 - Right Rotation (RR Rotation):
 ```
