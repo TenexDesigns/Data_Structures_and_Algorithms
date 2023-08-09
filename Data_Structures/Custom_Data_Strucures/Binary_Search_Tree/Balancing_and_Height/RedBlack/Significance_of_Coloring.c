@@ -1,4 +1,4 @@
-Sure, let's assign colors to the nodes in your provided tree:
+Sure, lets assign colors to the nodes in your provided tree:
 
 ```
       8 (Black)
