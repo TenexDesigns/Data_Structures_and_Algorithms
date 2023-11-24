@@ -1,6 +1,9 @@
   1.3_Use third-party libraries for DSA,or built-in or library implementations of common data structures and focus on solving the specific problem at hand
 
-    However, it is still important to have a basic understanding of the underlying principles of data structures and algorithms, as this will help you to choose the right library for your project and use it effectively.
+ --> You don't always need to implement data structures from scratch to use them
+ --> Use third-party libraries for DSA,  or built-in or library implementations of common data structures and focus on solving the specific problem at hand
+ --> However, it is still important to have a basic understanding of the underlying principles of data structures and algorithms, as this will help you to choose the right library for your project and use it effectively.
+ --> (understand their basic properties, usage patterns, and performance characteristics,Focus on problem-solving strategie,Understand data structure usage patterns,Break down complex problems into smaller ones, practice)
 
 
 Third-party libraries can greatly simplify your work with data structures. They provide ready-to-use implementations of common data structures and algorithms, saving you time and effort.
