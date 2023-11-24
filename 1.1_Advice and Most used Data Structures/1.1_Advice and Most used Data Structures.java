@@ -1,6 +1,9 @@
 In the world of programming, various data structures are widely used in algorithms and problem-solving. While understanding the implementation details of these data structures is valuable, it's also important to be able to utilize them effectively to solve problems.
 
- (understand their basic properties, usage patterns, and performance characteristics,Focus on problem-solving strategie,Understand data structure usage patterns,Break down complex problems into smaller ones, practice)
+ --> You don't always need to implement data structures from scratch to use them
+ --> Use third-party libraries for DSA,  or built-in or library implementations of common data structures and focus on solving the specific problem at hand
+ --> However, it is still important to have a basic understanding of the underlying principles of data structures and algorithms, as this will help you to choose the right library for your project and use it effectively.
+ --> (understand their basic properties, usage patterns, and performance characteristics,Focus on problem-solving strategie,Understand data structure usage patterns,Break down complex problems into smaller ones, practice)
 
 
 While memorizing the implementation details of all these data structures is not essential, it's crucial to understand their basic properties, usage patterns, and performance characteristics. This knowledge will enable you to select the appropriate data structure for a given problem and utilize it effectively.
