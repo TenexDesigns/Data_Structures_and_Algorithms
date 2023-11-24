@@ -1,4 +1,10 @@
-Absolutely, in programming, you don't always need to implement data structures from scratch to use them. Most programming languages, including TypeScript, Java, and Python, provide built-in or library implementations of common data structures. Leveraging these pre-built data structures can save time and effort, allowing you to focus on solving the specific problem at hand.
+Absolutely, in programming, you don't always need to implement data structures from scratch to use them. 
+
+  Use third-party libraries for DSA,  built-in or library implementations of common data structures and focus on solving the specific problem at hand
+
+   
+   Most programming languages, including TypeScript, Java, and Python, provide built-in or library implementations of common data structures.
+   Leveraging these pre-built data structures can save time and effort, allowing you to focus on solving the specific problem at hand.
 
 Here's how you can use existing data structures in different languages:
 
