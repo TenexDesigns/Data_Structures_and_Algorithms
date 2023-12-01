@@ -1,3 +1,4 @@
+
 The specific amount of math you need to know for developing efficient algorithms depends on the complexity of the algorithms you want to develop and the specific problems you want to solve. However, having a strong foundation in discrete math, algebra, and logarithms and exponents will be beneficial for most developers.
 
 Here's a breakdown of how each subject can contribute to your algorithm development skills:
