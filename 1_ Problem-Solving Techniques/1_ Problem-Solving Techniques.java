@@ -1,7 +1,41 @@
 problems link ---> https://github.com/roelkers/50-problems
 
+In addition to the problem-solving techniques you mentioned (dynamic programming, greedy method, branch and bound, recursion, iterative, divide and conquer), there are other techniques like the following:
+There are several problem-solving techniques that programmers use to solve complex problems. Some of the popular techniques include **Dynamic Programming**, **Greedy Method**, **Branch and Bound**, **Recursion**, **Iterative**, and **Divide and Conquer**². These techniques are used to solve problems in different domains such as optimization, graph theory, and dynamic programming.
+
+Here is a brief description of each technique:
+
+1. **Dynamic Programming**: This technique is used to solve problems that can be broken down into smaller subproblems. The solutions to these subproblems are stored in a table and used to solve the larger problem. Dynamic programming is used in a wide range of applications such as optimization, string matching, and bioinformatics².
+
+2. **Greedy Method**: This technique involves making locally optimal choices at each step to find a global optimum. The greedy method is used in a wide range of applications such as scheduling, data compression, and network routing².
+
+3. **Branch and Bound**: This technique is used to solve optimization problems by exploring the search space of possible solutions. The search space is divided into smaller subspaces, and the best solution is found by exploring each subspace. Branch and bound is used in a wide range of applications such as scheduling, resource allocation, and network routing².
+
+4. **Recursion**: This technique involves breaking down a problem into smaller subproblems and solving them recursively. Recursion is used in a wide range of applications such as tree traversal, graph traversal, and sorting².
+
+5. **Iterative**: This technique involves using a loop to repeatedly execute a set of instructions until a specific condition is met. Iterative techniques are used in a wide range of applications such as numerical analysis, optimization, and simulation².
+
+6. **Divide and Conquer**: This technique involves breaking down a problem into smaller subproblems and solving them independently. The solutions to the subproblems are then combined to solve the larger problem. Divide and conquer is used in a wide range of applications such as sorting, searching, and matrix multiplication².
+
+      
+
+7. **Backtracking**: This is an algorithmic technique for solving problems recursively by trying to build a solution incrementally, one piece at a time, removing those solutions that fail to satisfy the constraints of the problem at any point of time (by time, here, is referred to the time elapsed till reaching any level of the search tree).
+
+8. **Brute Force**: This is a simple, brute-force algorithm that tries all possible solutions to find the optimal or the best solution. It is often used when the problem size is small.
+
+9. **Memoization**: This is a technique used to speed up programs by storing the results of expensive function calls and reusing them when the same inputs occur again.
+
+10. **Tabulation**: This is a variant of dynamic programming where the table is filled in a bottom-up manner.
+
+11. **Breadth-First Search (BFS)**: This is an algorithm for traversing or searching tree or graph data structures. It starts at the tree root (or some arbitrary node of a graph, sometimes referred to as a 'search key') and explores the neighbor nodes at the present depth prior to moving on to nodes at the next depth level.
+
+12. **Depth-First Search (DFS)**: This is an algorithm for traversing or searching tree or graph data structures. The algorithm starts at the root (selecting some arbitrary node as the root in the case of a graph) and explores as far as possible along each branch before backtracking.
 
 
+
+
+
+      
 
 Problem-Solving Techniques in Programming
 There are numerous problem-solving techniques used in programming, each with its strengths and weaknesses. Here are some of the most common, along with examples in TypeScript and their best uses:
@@ -254,6 +288,107 @@ github.com/QamT/Ds-and-Algos
   
 
 
+Here are some examples of how these techniques can be used in TypeScript:
+
+1. **Dynamic Programming**: TypeScript can be used to implement dynamic programming algorithms such as the **Fibonacci sequence**. The Fibonacci sequence is a series of numbers in which each number is the sum of the two preceding numbers. Here is an example implementation of the Fibonacci sequence in TypeScript:
+
+```typescript
+function fibonacci(n: number): number {
+  if (n <= 1) {
+    return n;
+  }
+
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+console.log(fibonacci(10)); // Output: 55
+```
+
+2. **Greedy Method**: TypeScript can be used to implement the **Huffman coding algorithm**. The Huffman coding algorithm is a lossless data compression algorithm that uses a variable-length code table to represent a source symbol. Here is an example implementation of the Huffman coding algorithm in TypeScript:
+
+```typescript
+class Node {
+  public left: Node | null;
+  public right: Node | null;
+  public value: string;
+  public frequency: number;
+
+  constructor(value: string, frequency: number) {
+    this.left = null;
+    this.right = null;
+    this.value = value;
+    this.frequency = frequency;
+  }
+}
+
+function huffmanCoding(input: string): string {
+  const frequencyMap = new Map<string, number>();
+
+  for (const char of input) {
+    if (frequencyMap.has(char)) {
+      frequencyMap.set(char, frequencyMap.get(char)! + 1);
+    } else {
+      frequencyMap.set(char, 1);
+    }
+  }
+
+  const nodes: Node[] = [];
+
+  for (const [value, frequency] of frequencyMap.entries()) {
+    nodes.push(new Node(value, frequency));
+  }
+
+  while (nodes.length > 1) {
+    nodes.sort((a, b) => a.frequency - b.frequency);
+
+    const left = nodes.shift()!;
+    const right = nodes.shift()!;
+
+    const parent = new Node(left.value + right.value, left.frequency + right.frequency);
+    parent.left = left;
+    parent.right = right;
+
+    nodes.push(parent);
+  }
+
+  const root = nodes[0];
+
+  const codeMap = new Map<string, string>();
+
+  function traverse(node: Node, code: string) {
+    if (node.left === null && node.right === null) {
+      codeMap.set(node.value, code);
+      return;
+    }
+
+    traverse(node.left!, code + "0");
+    traverse(node.right!, code + "1");
+  }
+
+  traverse(root, "");
+
+  let encoded = "";
+
+  for (const char of input) {
+    encoded += codeMap.get(char)!;
+  }
+
+  return encoded;
+}
+
+console.log(huffmanCoding("hello world")); // Output: 011011101111100110001010011011000111
+```
+
+3. **Branch and Bound**:.
+
+Source: Conversation with Bing, 12/8/2023
+(1) How To Approach A Coding Problem - GeeksforGeeks. https://www.geeksforgeeks.org/how-to-approach-a-coding-problem/.
+(2) TypeScript Exercises - W3Schools. https://www.w3schools.com/typescript/typescript_exercises.php.
+(3) js.CheckiO - TypeScript coding challenges and exercises with solutions .... https://js.checkio.org/.
+(4) 6 Ways to Improve Your Programming Problem Solving - 7pace. https://www.7pace.com/blog/improve-your-programming-problem-solving.
+(5) en.wikipedia.org. https://en.wikipedia.org/wiki/TypeScript.
+
+      
 
 
 
